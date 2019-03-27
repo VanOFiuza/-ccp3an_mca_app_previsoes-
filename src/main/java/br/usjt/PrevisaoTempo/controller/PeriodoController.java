@@ -9,19 +9,21 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.usjt.PrevisaoTempo.model.Periodo;
 import br.usjt.PrevisaoTempo.respository.PeriodoRepository;
+import br.usjt.PrevisaoTempo.service.PeriodosService;
 
 @Controller
 public class PeriodoController {
 
+
 	@Autowired
-	private PeriodoRepository periodoRepo;
+	private PeriodosService periodoService;
 
 	@GetMapping("/previsao")
 	public ModelAndView listarPeriodos() {
 
 		ModelAndView mv = new ModelAndView("lista_previsao");
 
-		List<Periodo> periodos = periodoRepo.findAll();
+		List<Periodo> periodos = periodoService.listarTodos();
 
 		mv.addObject("periodos", periodos);
 		return mv;

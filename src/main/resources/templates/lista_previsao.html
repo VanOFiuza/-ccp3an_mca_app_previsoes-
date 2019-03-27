@@ -26,17 +26,6 @@
 						<th>Descrição</th>
 					</tr>
 				</thead>
-				<!--  				<tbody>
-					<tr>
-						<td>Ana</td>
-						<td>10</td>
-						<td>Ana</td>
-						<td>10</td>
-						<td>Ana</td>
-						
-					</tr>
-				</tbody>
--->
 				<tbody>
 					<tr th:each="periodo : ${periodos}">
 						<td th:text="${periodo.dia_semana}"></td>

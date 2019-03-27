@@ -5,3 +5,7 @@ insert into periodo (id, dia_semana, temp_max, temp_min, humidade_ar, descricao)
 insert into periodo (id, dia_semana, temp_max, temp_min, humidade_ar, descricao) values (5, 'Sexta-feira', '29°C', '20°C','10mm','Sol com aumento de nuvens ao longo do dia. À noite ocorrem pancadas de chuva.');
 insert into periodo (id, dia_semana, temp_max, temp_min, humidade_ar, descricao) values (6, 'Sabado', '26°C', '19°C','14mm','Sol e aumento de nuvens de manhã. Pancadas de chuva à tarde e à noite.');
 insert into periodo (id, dia_semana, temp_max, temp_min, humidade_ar, descricao) values (7, 'Domingo', '27°C', '20°C','5mm','Sol e aumento de nuvens de manhã. Pancadas de chuva à tarde e à noite.');
+
+--adicione um usuário
+insert into usuario (id, login, senha) values (1, 'admin', 'admin')
+insert into usuario (id, login, senha) values (2, 'peixe', 'peixe')
