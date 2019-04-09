@@ -12,6 +12,9 @@ import br.usjt.PrevisaoTempo.respository.PeriodoRepository;
 public class PeriodosService {
 	@Autowired
 	private PeriodoRepository periodoRepo;
+	
+	public void salvar (Periodo periodo) { periodoRepo.save(periodo); }
+
 
 	public List <Periodo> listarTodos (){
 	return periodoRepo.findAll();

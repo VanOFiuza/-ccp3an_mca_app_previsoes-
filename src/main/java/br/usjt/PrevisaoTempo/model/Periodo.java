@@ -13,6 +13,9 @@ public class Periodo implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long id;
+	private String data_hora;
+	private String latitude;
+	private String longitude;
 	private String dia_semana;
 	private String  descricao;
 	private String temp_min;
@@ -56,6 +59,25 @@ public class Periodo implements Serializable {
 	}
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+	public String getData_hora() {
+		return data_hora;
+	}
+	public void setData_hora(String data_hora) {
+		this.data_hora = data_hora;
+	}
+	public String getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+	public String getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
 	} 
+	
 
 }

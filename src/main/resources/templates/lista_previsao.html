@@ -20,6 +20,9 @@
 				<thead>
 					<tr>
 						<th>Dia Semana</th>
+						<th>Data Hora</th>
+						<th>Latitude</th>
+						<th>Longitude</th>
 						<th>Temp Máx</th>
 						<th>Temp Min</th>
 						<th>Humidade Ar</th>
@@ -29,6 +32,9 @@
 				<tbody>
 					<tr th:each="periodo : ${periodos}">
 						<td th:text="${periodo.dia_semana}"></td>
+						<td th:text="${periodo.data_hora}"></td>
+						<td th:text="${periodo.latitude}"></td>
+						<td th:text="${periodo.longitude}"></td>
 						<td th:text="${periodo.temp_max}"></td>
 						<td th:text="${periodo.temp_min}"></td>
 						<td th:text="${periodo.humidade_ar}"></td>
