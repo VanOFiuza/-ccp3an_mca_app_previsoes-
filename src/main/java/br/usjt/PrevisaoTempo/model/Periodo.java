@@ -9,10 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-
-
-
 
 
 
@@ -27,10 +25,14 @@ public class Periodo implements Serializable {
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(unique=true, name="id_dia")
 	private Dia dia;
+	
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="cidade")
+	private Cidade cidade;
+	
+	
 	private String data_hora;
-	private String latitude;
-	private String longitude;
-	private String dia_semana;
+	
 	private String  descricao;
 	private String temp_min;
 	
@@ -44,6 +46,20 @@ public class Periodo implements Serializable {
 	public Periodo() {
 		
 	}
+	
+	public Periodo(Dia dia, Cidade cidade, String temp_min, String temp_max, String umidadeRelativaAr, String descricao,
+			String data_hora) {
+		super();
+		this.temp_min = temp_min;
+		this.temp_max = temp_max;
+		this.humidade_ar = umidadeRelativaAr;
+		this.descricao = descricao;
+		this.data_hora = data_hora;
+		this.dia = dia;
+		this.dia.setPeriodo(this);
+		this.cidade = cidade;
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -71,12 +87,7 @@ public class Periodo implements Serializable {
 	private String temp_max;
 	private String humidade_ar;
 	
-	public String getDia_semana() {
-		return dia_semana;
-	}
-	public void setDia_semana(String dia_semana) {
-		this.dia_semana = dia_semana;
-	}
+
 
 	
 	public String getDescricao() {
@@ -91,18 +102,7 @@ public class Periodo implements Serializable {
 	public void setData_hora(String data_hora) {
 		this.data_hora = data_hora;
 	}
-	public String getLatitude() {
-		return latitude;
-	}
-	public void setLatitude(String latitude) {
-		this.latitude = latitude;
-	}
-	public String getLongitude() {
-		return longitude;
-	}
-	public void setLongitude(String longitude) {
-		this.longitude = longitude;
-	} 
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
