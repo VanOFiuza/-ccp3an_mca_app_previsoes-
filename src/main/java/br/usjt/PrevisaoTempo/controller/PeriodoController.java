@@ -16,7 +16,6 @@ public class PeriodoController {
 
 	// não faça mais essa injeção
 	// @Autowired
-	// private AlunosRepository alunosRepo;
 	// injete um serviço
 
 	@Autowired
