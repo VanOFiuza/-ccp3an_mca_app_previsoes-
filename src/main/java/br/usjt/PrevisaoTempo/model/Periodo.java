@@ -26,9 +26,8 @@ public class Periodo implements Serializable {
 	@JoinColumn(unique=true, name="id_dia")
 	private Dia dia;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="cidade")
-	private Cidade cidade;
+	 @ManyToOne
+	  private Cidade cidade;
 	
 	
 	private String data_hora;
@@ -37,29 +36,9 @@ public class Periodo implements Serializable {
 	private String temp_min;
 	
 	
-	public Periodo(Dia dia) {
-		this.dia = dia;
-		this.dia.setPeriodo(this);
-	}
 
 	
-	public Periodo() {
-		
-	}
-	
-	public Periodo(Dia dia, Cidade cidade, String temp_min, String temp_max, String umidadeRelativaAr, String descricao,
-			String data_hora) {
-		super();
-		this.temp_min = temp_min;
-		this.temp_max = temp_max;
-		this.humidade_ar = umidadeRelativaAr;
-		this.descricao = descricao;
-		this.data_hora = data_hora;
-		this.dia = dia;
-		this.dia.setPeriodo(this);
-		this.cidade = cidade;
-	}
-	
+
 	public Long getId() {
 		return id;
 	}

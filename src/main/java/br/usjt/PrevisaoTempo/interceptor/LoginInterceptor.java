@@ -1,4 +1,4 @@
-package br.usjt.PrevisaoTempo;
+package br.usjt.PrevisaoTempo.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

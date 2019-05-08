@@ -1,6 +1,7 @@
 package br.usjt.PrevisaoTempo.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,32 +16,31 @@ public class Cidade implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-
+	private Long id_cidade;
 	private String nome;
 	private String latitude;
 	private String longitude;
 
-	@OneToMany(mappedBy="cidade")
-	private Periodo periodo;
-	
+	@OneToMany(mappedBy = "cidade")
+	private List<Periodo> periodo;
+
 	public Cidade() {
 	}
 
-	public Cidade(Long id, String nome, String latitude, String longitude) {
+	public Cidade(Long id_cidade, String nome, String latitude, String longitude) {
 		super();
-		this.id = id;
+		this.id_cidade = id_cidade;
 		this.nome = nome;
 		this.latitude = latitude;
 		this.longitude = longitude;
 	}
 
 	public Long getId() {
-		return id;
+		return id_cidade;
 	}
 
 	public void setId(Long id) {
-		this.id = id;
+		this.id_cidade = id;
 	}
 
 	public String getNome() {
@@ -67,11 +67,14 @@ public class Cidade implements Serializable {
 		this.longitude = longitude;
 	}
 
+
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((id_cidade == null) ? 0 : id_cidade.hashCode());
 		return result;
 	}
 
@@ -84,17 +87,18 @@ public class Cidade implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Cidade other = (Cidade) obj;
-		if (id == null) {
-			if (other.id != null)
+		if (id_cidade == null) {
+			if (other.id_cidade != null)
 				return false;
-		} else if (!id.equals(other.id))
+		} else if (!id_cidade.equals(other.id_cidade))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Cidade [id=" + id + ", nome=" + nome + ", latitude=" + latitude + ", longitude=" + longitude + "]";
+		return "Cidade [id=" + id_cidade + ", nome=" + nome + ", latitude=" + latitude + ", longitude=" + longitude
+				+ "]";
 	}
 
 }
